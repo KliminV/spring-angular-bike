@@ -13,6 +13,11 @@ spring:
     username:
     password:
     driver-class-name: org.sqlite.JDBC
+
+auth0:
+  issuer: https://aereliz.eu.auth0.com/
+# api/v2/
+  apiAudience: http://localhost:1111
 #
 #jdbc:
 #  driver: org.sqlite.JDBC

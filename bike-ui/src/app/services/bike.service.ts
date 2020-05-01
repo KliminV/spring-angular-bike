@@ -17,11 +17,13 @@ export class BikeService {
   }
 
   getBikes() {
-    return this.http.get('server/api/v1/bikes', this.options);
+    let token = localStorage.getItem('access_token');
+    return this.http.get('server/api/v1/bikes', {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)});
   }
 
   getBike(id: number) {
-    return this.http.get('server/api/v1/bikes/' + id, this.options);
+    let token = localStorage.getItem('access_token');
+    return this.http.get('server/api/v1/bikes/' + id, {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)});
   }
 
   createBikeRegistration(bike) {
